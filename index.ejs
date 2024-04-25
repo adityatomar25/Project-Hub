@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swift Cabs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Add zoom effect to images */
+        .zoom-image {
+            transition: transform 0.3s;
+        }
+
+        .zoom-image:hover {
+            transform: scale(1.1); /* Adjust the scale value for desired zoom effect */
+        }
+
+        /* Body font */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5dc; /* Light Brown Background */
+        }
+
+        /* Header styles */
+        header h1 {
+            font-weight: 700;
+        }
+
+        /* Navigation styles */
+        nav ul li a {
+            font-weight: 400;
+        }
+
+        /* Main content styles */
+        main {
+            font-weight: 400;
+        }
+
+        /* Footer styles */
+        footer {
+            font-weight: 400;
+        }
+
+        /* Map container styles */
+        .map-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 400px; /* Adjust the height as needed */
+            border: 0;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Swift Cabs</h1>
+        <nav>
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><button id="signup-btn">Sign Up</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Welcome to Swift Cabs</h2>
+            <p>Book a taxi in just a few clicks!</p>
+            <a href="/services" class="btn">Book Now</a>
+            <br><br>
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1517249746156-054356269a53?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="taxi image" width="500" class="zoom-image">
+                <img src="https://images.unsplash.com/photo-1514749204155-24e484635226?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image 2" width="500" class="zoom-image">
+            </div>
+        </section>
+
+        <!-- Map container -->
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.709440296485!2d-77.02604288540112!3d38.8976769837076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b7bcdecbb1df%3A0x7f3c8de0d4c496b7!2sWhite%20House!5e0!3m2!1sen!2sus!4v1647326238044!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p>Email: swiftcabs@gmail.com</p>
+            <p>Phone: +0135-7890</p>
+            <p>Address: 123 Swift Cabs, Rajpur Road, Dehradun</p>
+            <p>248001 Uttarakhand</p>
+        </div>
+
+        <div class="footer-about">
+            <h3>About Us</h3>
+            <p>Join the thousands of satisfied customers who have chosen Swift Cabs for their travel needs. Experience the luxury of convenience, the comfort of reliability, and the joy of hassle-free journeys with us.
+
+                Thank you for choosing Swift Cabs. Let's ride together towards your next adventure!</p>
+        </div>
+
+        <div class="footer-copyright">
+            <p>&copy; 2024 Swift Cabs</p>
+        </div>
+    </footer>
+
+    <!-- Sign Up Form -->
+    <div id="signup-form" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Sign Up</h2>
+            <form> <!--form validation-->
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <input type="submit" value="Sign Up" class="btn signup-btn">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for Sign Up Form Modal
+        var modal = document.getElementById('signup-form');
+        var btn = document.getElementById("signup-btn");
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display =
+            "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+    <!-- Google Maps API Script -->
+    <script>
+        // Initialize and add the map
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 12,
+                center: { lat: 30.3165, lng: 78.0322 }, // Default center location
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</body>
+</html>
+
