@@ -10,4 +10,4 @@ Features
 
 Easy Booking: Simple and user-friendly interface for quick bookings.
 Fast Response: Swift matching with nearby drivers for prompt pickups.
-![Alt text]images/Screenshot 2025-01-21 at 2.52.15 PM.png
+![screenshot]images/Screenshot 2025-01-21 at 2.52.15 PM.png
